@@ -5,9 +5,6 @@ const sum = function (a, b) {
   return sum1;
 };
 
-sum(5, 10); // => 15
-sum(15, 10); // => 25
-
 // 2
 const average = function (a, b) {
   // TODO: Your code here
@@ -16,9 +13,6 @@ const average = function (a, b) {
   avg /= 2;
   return avg;
 };
-
-average(20, 5); // => 12.5
-average(10, 20); // => 15
 
 //   3
 /*  
@@ -41,10 +35,6 @@ const round = function (number) {
   let round1 = Math.round(number);
   return round1;
 };
-round(5); // => 5
-round(2.4); // => 2
-round(0.8); // => 1
-round(1.7); // => 12
 
 // 5
 
@@ -53,10 +43,6 @@ const toThePowerOf = function (base, exponent) {
   return Math.pow(base, exponent);
 };
 
-toThePowerOf(2, 2); // => 4
-toThePowerOf(2, 3); // => 8
-toThePowerOf(9, 2); // => 81
-
 //   6
 
 const randomNumber = function () {
@@ -64,10 +50,6 @@ const randomNumber = function () {
 
   return Math.random();
 };
-
-randomNumber(); // => 0.5052417714491793
-randomNumber(); // => 0.32678224417562673
-randomNumber(); // => 0.43265697184952523
 
 //   7
 const oneOrZero = function () {
@@ -78,10 +60,6 @@ const oneOrZero = function () {
   return x;
 };
 
-oneOrZero(); // => 1
-oneOrZero(); // => 1
-oneOrZero(); // => 0
-
 //   8
 const randomRange = function (number) {
   // TODO: Your code here
@@ -90,26 +68,104 @@ const randomRange = function (number) {
   return x;
 };
 
-// 10 and 0 are included
-randomRange(10); // => 10
-randomRange(10); // => 7
-randomRange(10); // => 1
-randomRange(10); // => 0
-
 // 9
 
 function includeOf(string, character) {
-    // TODO: Your code here
-    for (let i = 0; i < string.length; i++) {
-
-        if (string[i] === character) {
-           
-            console.log(true);
-        }
+  // TODO: Your code here
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === character) {
+      console.log(true);
     }
+  }
 }
-includeOf("Hello", "h"); // => false
-includeOf("hello", "h"); // => true
-includeOf("hello", "a"); // => false
-includeOf("World", "r"); // => true
-includeOf("World", "a"); // => false
+
+// ------------------------------------------Array---------------------------
+
+// 1
+const addToArray = function (array, string) {
+  // TODO: Your code here
+  const x = [];
+  x.push(array, string);
+
+  return x;
+};
+
+// 2
+
+const convertToString = function (array) {
+  // TODO: Your code here
+  let text = array.join();
+  return text;
+};
+
+//   3
+
+// the array values are unique, no duplicate values in the array
+const updateOrCreate = function (array, index, value) {
+  // TODO: Your code here
+  if (index > array.length - 1) {
+    console.log(`there is no element to updated in this index`);
+  } else {
+    let x = array.splice(index, 1, value);
+
+    return array;
+  }
+};
+
+//   4
+
+const onlyString = function (array) {
+  // TODO: Your code here
+
+  let x = [];
+  for (let index = 0; index < array.length; index++) {
+    if (typeof array[index] === "string") {
+      x.push(array[index]);
+    }
+  }
+  return x;
+};
+
+// 5
+
+const users = [
+  ["Jane", "123456"],
+  ["admin", "abc123"],
+];
+
+const login = function (username, password) {
+  // TODO: Your code here
+  let res = "Login Failed"
+   for (let index = 0; index < users.length; index++) {
+       
+    if (users[index].includes(username) && users[index].includes(password)) {
+        res = "login succes"
+        
+    }
+       
+   } return res;
+};
+
+//   6
+
+const maximumNumber = function (numbers) {
+  // TODO: Your code here
+  numbers.sort(function (a, b) {
+    return b - a;
+  });
+  return numbers[0];
+};
+
+//   7
+
+const reversString = function (string) {
+  // TODO: Your code here
+
+  var splitString = string.split("");
+
+  var reverseArray = splitString.reverse();
+
+  var joinArray = reverseArray.join("");
+
+  return joinArray;
+};
